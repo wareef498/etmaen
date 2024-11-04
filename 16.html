@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحادثة</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f6f6f6;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+        .header {
+            background-color: #e9e9d5;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0 0 20px 20px;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            color: #5b5b5b;
+            font-weight: bold;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #5b5b5b;
+            cursor: pointer;
+        }
+
+        .chat-box {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: calc(100vh - 160px); /* Adjust to ensure chat box fits within the viewport */
+}
+
+        .message {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 5px 0;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .message.sent {
+            align-self: flex-end;
+            background-color: #d4e0b5;
+        }
+
+        .message.received {
+            align-self: flex-start;
+            background-color: #e0e0e0;
+        }
+
+      .chat-input-box {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    bottom: 60px; /* Adjust based on footer height */
+    width: 100%;
+    max-width: 400px;
+}
+
+        .chat-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .send-btn {
+            background-color: #a7a27c;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .send-btn:hover {
+            background-color: #99987a;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f6f6f6;
+            border-top: 1px solid #ddd;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bottom-nav a {
+            color: #777;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .bottom-nav img {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">المحادثة</div>
+        <a href="15.html" class="back-button">←</a>
+
+
+        <div class="chat-box">
+            <div class="message received">أهلا بك في أطمئن كيف يمكننا مساعدتك؟</div>
+            <!-- More chat messages can be added here dynamically -->
+        </div>
+
+        <div class="chat-input-box">
+            <input type="text" class="chat-input" placeholder="ابدأ الدردشة">
+            <button class="send-btn">إرسال</button>
+        </div>
+    </div>
+
+ <!-- Footer Section -->
+ <footer>
+    <a href="firstpage.html">
+        <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+        <span>اطمئن</span>
+    </a>
+
+    <a href="12.html">
+        <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+        <span>المواعيد</span>
+    </a>
+
+    <a href="13.html">
+        <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+        <span>الخطة العلاجية</span>
+    </a>
+
+    <a href="16.html">
+        <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+        <span>المحادثات</span>
+    </a>
+
+    <a href="17.html">
+        <img src="user.jpg" alt="more"> <!-- Replace with more icon -->
+        <span>الملف الشخصي</span>
+    </a>
+</footer>
+
+    <script>
+       const chatInput = document.querySelector('.chat-input');
+const chatBox = document.querySelector('.chat-box');
+
+document.querySelector('.send-btn').addEventListener('click', function() {
+    handleUserMessage();
+});
+
+// Function to handle sending the message
+function handleUserMessage() {
+    const messageText = chatInput.value.trim();
+    if (messageText) {
+        addMessage(messageText, 'sent');
+        chatInput.value = '';
+        respondToMessage(messageText);
+    }
+}
+
+// Function to add a message to the chat
+function addMessage(text, type) {
+    const newMessage = document.createElement('div');
+    newMessage.classList.add('message', type);
+    newMessage.textContent = text;
+    chatBox.appendChild(newMessage);
+    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the latest message
+}
+
+// Function to respond based on the user input
+function respondToMessage(text) {
+    let response = '';
+
+    // Define responses for specific greetings
+    const lowerText = text.toLowerCase(); // Convert to lowercase for easier comparison
+
+    if (lowerText === 'hi' || lowerText === 'مرحبا' || lowerText === 'السلام عليكم' || lowerText === 'اهلا') {
+        response = 'أهلاً، كيف يمكننا مساعدتك؟';
+    } else {
+        // Default response for other messages
+        response = 'شكرا شكرا لتواصلك معنا سوف يتم الرد عليك ب اقرب وقت  ';
+    }
+
+    // Add the response to the chat
+    setTimeout(() => {
+        addMessage(response, 'received');
+    }, 500); // Simulate a slight delay for the response
+}
+
+    </script>
+
+</body>
+</html>

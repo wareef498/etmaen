@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيدي</title>
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #F5F5F5;
+            color: #606C38;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .header {
+            background-color: #d5dcc5;
+            padding: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            color: #333;
+        }
+        .appointments {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .appointment {
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #FFFFFF;
+            font-size: 1em;
+            color: #333;
+        }
+        .appointment span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .status-completed, .status-pending {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .status-completed::before {
+            content: "✔️";
+            margin-left: 5px;
+            color: #333;
+        }
+        .status-pending::before {
+            content: "⏰";
+            margin-left: 5px;
+            color: #333;
+        }
+        .book-btn {
+            background-color: #D9D9D9;
+            border: none;
+            padding: 15px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            color: #333;
+        }
+        .footer {
+            background-color: #D9D9D9;
+            padding: 15px 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #333;
+        }
+        .footer-item {
+            text-align: center;
+            font-size: 0.9em;
+            color: #333;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #E1E3D8;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .footer-icon {
+            font-size: 12px;
+            text-align: center;
+            color: #606C38;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-icon img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+                       /* Footer styles */
+                       footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">مواعيدي</div>
+
+        <!-- Appointments section -->
+        <div class="appointments">
+            <!-- Appointment 1 -->
+            <div class="appointment">
+                <span class="status-completed">تم حجز موعد الساعة 8:30 م مع الطبيب النفسي</span>
+                <span>د. اسماء خالد</span>
+                <span>مدة الجلسة: ساعة</span>
+            </div>
+            <!-- Appointment 2 -->
+            <div class="appointment">
+                <span class="status-pending">تم حجز موعد الساعة 9:00 ص مع الطبيب النفسي</span>
+                <span>د. اسماء خالد</span>
+                <span>مدة الجلسة: 30 دقيقة</span>
+            </div>
+
+            <!-- Booking button -->
+            <button class="book-btn" onclick="location.href='10.html'">احجز موعدك</button>
+
+        </div>
+        <footer>
+          <a href="firstpage.html">
+              <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+              <span>اطمئن</span>
+          </a>
+      
+          <a href="12.html">
+              <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+              <span>المواعيد</span>
+          </a>
+      
+          <a href="13.html">
+              <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+              <span>الخطة العلاجية</span>
+          </a>
+      
+          <a href="16.html">
+              <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+              <span>المحادثات</span>
+          </a>
+      
+          <a href="17.html">
+              <img src="user.jpg" alt="more"> <!-- Replace with more icon -->
+              <span>الملف الشخصي</span>
+          </a>
+      </footer>
+    </div>
+</body>
+</html>

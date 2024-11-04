@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف الطبيب</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevents scrolling */
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            max-height: 800px;
+            background-color: #F6F7F1;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .header span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #606C38;
+        }
+
+        .header .back-btn,
+        .header .fav-btn {
+            font-size: 24px;
+            text-decoration: none;
+            color: #606C38;
+        }
+
+        /* Profile Section */
+        .doctor-profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .doctor-img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .doctor-profile h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .doctor-profile span {
+            display: block;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .doctor-profile p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Details Section */
+        .doctor-details {
+            margin-bottom: 20px;
+            flex-grow: 1; /* Allows the details section to expand */
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .detail-item span {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .detail-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Specializations */
+        .specializations h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #E1E3D8;
+            border-radius: 15px;
+            padding: 7px 12px;
+            font-size: 12px;
+            color: #606C38;
+        }
+
+        /* Booking Button */
+        .book-btn {
+            display: block;
+            width: 100%;
+            background-color: #606C38;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px; /* Slight margin for spacing */
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background-color: #4F5833;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 300px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+        }
+
+        .popup h3 {
+            color: #606C38;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .popup .confirm-icon {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background-color: #606C38;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #4F5833;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="10.html" class="back-btn">←</a>
+            <span>50</span>
+            <a href="#" class="fav-btn">♥</a>
+        </div>
+
+        <div class="doctor-profile">
+            <img src="user.png" alt="د. أسماء خالد" class="doctor-img">
+            <h2>د. أسماء خالد</h2>
+            <span>طبيب</span>
+            <p>طبيب استشاري حاصلة على البورد السعودي في الطب الأسري</p>
+        </div>
+
+        <div class="doctor-details">
+            <div class="detail-item">
+                <span>الخبرة</span>
+                <p>10 سنوات</p>
+            </div>
+            <div class="detail-item">
+                <span>نوع الجلسات</span>
+                <p>نفسية</p>
+            </div>
+            <div class="detail-item">
+                <span>تقديم الجلسات</span>
+                <p>حضورية و أونلاين عبر فيديو</p>
+            </div>
+            <div class="detail-item">
+                <span>اللغة</span>
+                <p>العربية</p>
+            </div>
+        </div>
+
+        <div class="specializations">
+            <h3>التخصصات</h3>
+            <div class="tags">
+                <span class="tag">الرهاب الاجتماعي</span>
+                <span class="tag">القلق</span>
+                <span class="tag">الوسواس القهري</span>
+                <span class="tag">الخوف من الظلام</span>
+                <span class="tag">الصدمة من الموت</span>
+                <span class="tag">اضطراب المزاج</span>
+            </div>
+        </div>
+
+        <button class="book-btn" onclick="showPopup()">احجز الآن</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="overlay" onclick="hidePopup()"></div>
+    <div class="popup">
+        <span class="confirm-icon">✔️</span>
+        <h3>تم حجز الموعد</h3>
+        <p>سوف يتواصل معك الطبيب قريبًا</p>
+        <button class="close-btn" onclick="hidePopup()">إغلاق</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.querySelector('.popup').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطط العلاجية</title>
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #F5F5F5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .header {
+            background-color: #d5dcc5;
+            padding: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            color: #333;
+            position: relative;
+        }
+        .header .close {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #333;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .plan-title {
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #FFFFFF;
+            font-size: 1em;
+            color: #333;
+        }
+        .plan-title .sub-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .plan-description {
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5em;
+        }
+        .stages-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .stage {
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #FFFFFF;
+            font-size: 0.9em;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .stage .icon {
+            margin-left: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .join-btn {
+            background-color: #d5dcc5;
+            border: none;
+            padding: 15px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            color: #333;
+        }
+          /* Footer */
+          .footer {
+            background-color: #E1E3D8;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .footer-icon {
+            font-size: 12px;
+            text-align: center;
+            color: #606C38;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-icon img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+                       /* Footer styles */
+                       footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <span>الخطط العلاجية</span>
+            <span class="close">✖</span>
+        </div>
+
+        <!-- Content section -->
+        <div class="content">
+            <!-- Plan title and info -->
+            <div class="plan-title">
+                <span>التعامل مع الرهاب الاجتماعي </span>
+                <div class="sub-info">
+                    <span>3 مراحل</span>
+                    <span>275 مسجل 👥</span>
+                </div>
+            </div>
+
+            <!-- Plan description -->
+            <div class="plan-description">
+                عن الخطة العلاجية<br>
+                إنها تهدف لتحسين وظائفك المعرفية والشخصية وتزيد من رضاك عن حياتك. تتضمن الخطة مراحل متعددة تهدف لتحسين جودة حياتك.
+            </div>
+
+            <!-- Stages section -->
+            <div class="stages-title">المراحل</div>
+
+            <div class="stage">
+                <span class="icon">🔒</span>
+                <span>  التثقيف والتقييم النفسي </span>
+            </div>
+            <div class="stage">
+                <span class="icon">🔒</span>
+                <span>  التقبل بدلا من التحكم والتجنب</span>
+            </div>
+            <div class="stage">
+                <span class="icon">🔒</span>
+                <span> التدريب على مهارات الانفصال</span>
+            </div>
+
+            <!-- Join button -->
+            <button class="join-btn">انضم الآن</button>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <a href="firstpage.html">
+              <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+              <span>اطمئن</span>
+          </a>
+      
+          <a href="12.html">
+              <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+              <span>المواعيد</span>
+          </a>
+      
+          <a href="13.html">
+              <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+              <span>الخطة العلاجية</span>
+          </a>
+      
+          <a href="16.html">
+              <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+              <span>المحادثات</span>
+          </a>
+      
+          <a href="17.html">
+              <img src="user.jpg" alt="more"> <!-- Replace with more icon -->
+              <span>الملف الشخصي</span>
+          </a>
+      </footer>
+    </div>
+</body>
+</html>

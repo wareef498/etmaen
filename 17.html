@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بياناتي الشخصية</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #e0e0e0;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .section {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      cursor: pointer;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 20px 0;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px 0;
+      cursor: pointer;
+    }
+
+    .active-tab {
+      background-color: #d5dcc5;
+      border-radius: 10px;
+    }
+
+    .delete-account {
+      text-align: center;
+      color: red;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .footer {
+      width: 100%;
+      background-color: #e0e0e0;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+    }
+
+    .footer img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Popup styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #d5dcc5;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #c1c9b3;
+    }
+    /* Footer */
+    .footer {
+            background-color: #E1E3D8;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .footer-icon {
+            font-size: 12px;
+            text-align: center;
+            color: #606C38;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-icon img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+                       /* Footer styles */
+                       footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">بياناتي الشخصية</div>
+
+    <div class="section">
+      <div class="info">
+        <span>اسم المستخدم</span>
+        <span>المستخدم</span>
+      </div>
+      <div class="info">
+        <span>تاريخ الميلاد</span>
+        <span>28-12-2004</span>
+      </div>
+      <div class="info">
+        <span>رقم الجوال</span>
+        <span>+966537520768</span>
+      </div>
+      <div class="info">
+        <span>البريد الإلكتروني</span>
+        <span>sara@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active-tab">الجارية</div>
+      <div class="tab">المكتملة</div>
+    </div>
+
+    <div class="section session">
+      <div class="info">
+        <span>جلسة بتاريخ</span>
+        <span>17/11/2024</span>
+      </div>
+    </div>
+
+    <div class="delete-account">حذف الحساب</div>
+  </div>
+
+      <!-- Footer -->
+      <footer>
+        <a href="firstpage.html">
+            <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+            <span>اطمئن</span>
+        </a>
+    
+        <a href="12.html">
+            <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+            <span>المواعيد</span>
+        </a>
+    
+        <a href="13.html">
+            <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+            <span>الخطة العلاجية</span>
+        </a>
+    
+        <a href="16.html">
+            <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+            <span>المحادثات</span>
+        </a>
+    
+        <a href="17.html">
+            <img src="user.jpg" alt="more"> <!-- Replace with more icon -->
+            <span>الملف الشخصي</span>
+        </a>
+    </footer>
+
+  <!-- Popups -->
+  <div class="popup-overlay" id="sessionPopup">
+    <div class="popup">
+      <h3>هل تريد الغاء الجلسة؟</h3>
+      <button onclick="closePopup('sessionPopup')">الغاء الجلسة</button>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="deletePopup">
+    <div class="popup">
+      <h3>هل أنت متأكد أنك تريد حذف الحساب؟</h3>
+      <button onclick="deleteAccount()">نعم</button>
+      <button onclick="closePopup('deletePopup')">لا</button>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active-tab'));
+        tab.classList.add('active-tab');
+      });
+    });
+
+    document.querySelector('.session').addEventListener('click', () => {
+      document.getElementById('sessionPopup').style.display = 'flex';
+    });
+
+    document.querySelector('.delete-account').addEventListener('click', () => {
+      document.getElementById('deletePopup').style.display = 'flex';
+    });
+
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+    }
+
+    function deleteAccount() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

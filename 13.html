@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطط العلاجية</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F9F9F9;
+            padding: 20px;
+            direction: rtl;
+            background-image: url('background.png'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 100px; /* Added margin-top to move containers down */
+            background-color: #F9F9F9;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #606C38;
+            margin-bottom: 20px;
+        }
+
+        .session-box {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .session-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .session-info {
+            padding: 10px;
+        }
+
+        .session-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .session-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .details-btn {
+            display: inline-block;
+            padding: 10px;
+            background-color: #606C38;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .details-btn:hover {
+            background-color: #495C2E;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .tab-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #F4F4F4;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-item {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .tab-item img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        .tab-item.active {
+            color: #606C38;
+        }
+
+        .video-placeholder {
+            position: relative;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+        }
+
+        /* Arrow button style */
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            color: #606C38;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-arrow:hover {
+            color: #495C2E;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            margin-right: -20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="13.html" class="back-arrow">&#8592;</a> <!-- Arrow link to redirect to 13.html -->
+
+    <div class="container">
+        <div class="header">
+            الخطط العلاجية
+        </div>
+        <div class="session-box">
+            <div class="video-placeholder">
+                <video width="100%" height="auto" controls>
+                    <source src="video-thumbnail1.mp4" type="video/mp4">
+                    <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="Arabic">
+                    عذراً، متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <div class="session-info">
+                <div class="stats">
+                    <p> التعافي من الاكتئاب</p>
+                    <a href="14.html" class="details-btn">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="session-box">
+            <div class="video-placeholder">
+                <video width="100%" height="auto" controls>
+                    <source src="video-thumbnail2.mp4" type="video/mp4">
+                    <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="Arabic">
+                    عذراً، متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <div class="session-info">
+                <div class="stats">
+                    <p> وداعا للقلق </p>
+                    <a href="15.html" class="details-btn">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+        <div class="session-box">
+            <div class="video-placeholder">
+                <video width="100%" height="auto" controls>
+                    <source src="video-thumbnail2.mp4" type="video/mp4">
+                    <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="Arabic">
+                    عذراً، متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <div class="session-info">
+                <div class="stats">
+                    <p>  التعامل مع الرهاب الاجتماعي </p>
+                    <a href="19.html" class="details-btn">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- Footer Section -->
+ <footer>
+    <a href="firstpage.html">
+        <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+        <span>اطمئن</span>
+    </a>
+
+    <a href="12.html">
+        <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+        <span>المواعيد</span>
+    </a>
+
+    <a href="14.html">
+        <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+        <span>الخطة العلاجية</span>
+    </a>
+
+    <a href="16.html">
+        <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+        <span>المحادثات</span>
+    </a>
+
+    <a href="17.html">
+        <img src="user.jpg" alt="more"> <!-- Replace with more icon -->
+        <span>الملف الشخصي</span>
+    </a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوع الموعد</title>
+    <style>
+        /* General Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .header {
+            background-color: #F6F7F1;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #606C38;
+            position: relative;
+        }
+
+        .header::after {
+            content: ">";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #606C38;
+            font-size: 18px;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        /* Appointment Type Sections */
+        .appointment-section {
+            border: 1px solid #606C38;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
+            color: #606C38;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .appointment-section h3 {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .appointment-section.active h3::before {
+            content: "⌄";
+            margin-right: 5px;
+        }
+
+        .appointment-section:not(.active) h3::before {
+            content: "〉";
+            margin-right: 5px;
+        }
+
+        /* Time Slots */
+        .time-slots {
+            display: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .appointment-section.active .time-slots {
+            display: flex;
+        }
+
+        .time-slot {
+            background-color: #D9D9C2;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #606C38;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #E1E3D8;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .footer-icon {
+            font-size: 12px;
+            text-align: center;
+            color: #606C38;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-icon img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+                       /* Footer styles */
+                       footer {
+            background-color: #d5dcc5;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        footer img {
+            width: 24px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        نوع الموعد
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Online Section -->
+        <div class="appointment-section" onclick="toggleSection('online')">
+            <h3>أونلاين</h3>
+            <div class="time-slots" id="online-slots">
+                <div class="time-slot">17/11/2024 <br> 8:00</div>
+                <div class="time-slot">19/11/2024 <br> 10:00</div>
+                <div class="time-slot">25/11/2024 <br> 7:00</div>
+                <div class="time-slot">29/11/2024 <br> 10:00</div>
+            </div>
+        </div>
+
+        <!-- In-Person Section -->
+        <div class="appointment-section" onclick="toggleSection('inperson')">
+            <h3>حضوري</h3>
+            <div class="time-slots" id="inperson-slots">
+                <div class="time-slot">17/11/2024 <br> 8:00</div>
+                <div class="time-slot">19/11/2024 <br> 10:00</div>
+                <div class="time-slot">25/11/2024 <br> 7:00</div>
+                <div class="time-slot">29/11/2024 <br> 10:00</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <a href="firstpage.html">
+          <img src="home_icon.png" alt="home"> <!-- Replace with home icon -->
+          <span>اطمئن</span>
+      </a>
+  
+      <a href="12.html">
+          <img src="calendar_icon.png" alt="calendar"> <!-- Replace with calendar icon -->
+          <span>المواعيد</span>
+      </a>
+  
+      <a href="14.html">
+          <img src="plan_icon.png" alt="plan"> <!-- Replace with plan icon -->
+          <span>الخطة العلاجية</span>
+      </a>
+  
+      <a href="16.html">
+          <img src="chat_icon.png" alt="chat"> <!-- Replace with chat icon -->
+          <span>المحادثات</span>
+      </a>
+  
+      <a href="17.html">
+          <img src="more_icon.png" alt="more"> <!-- Replace with more icon -->
+          <span>الملف الشخصي</span>
+      </a>
+  </footer>
+
+    <script>
+        function toggleSection(section) {
+            const onlineSection = document.getElementById('online-slots');
+            const inpersonSection = document.getElementById('inperson-slots');
+
+            if (section === 'online') {
+                onlineSection.parentElement.classList.toggle('active');
+                inpersonSection.parentElement.classList.remove('active');
+            } else if (section === 'inperson') {
+                inpersonSection.parentElement.classList.toggle('active');
+                onlineSection.parentElement.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

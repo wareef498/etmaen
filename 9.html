@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جلسة فورية</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('background.png'); /* background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the background from repeating */
+            color: #000;
+            padding: 20px;
+            direction: rtl;
+            display: flex; /* Center content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: #F9F9F9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* For absolute positioning of back arrow */
+        }
+
+        .header {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #606C38;
+            margin-bottom: 20px;
+        }
+
+        .session-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            background-color: #fff;
+        }
+
+        .session-box img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .session-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .session-box p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px; /* Increased margin-top for more padding */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #333;
+        }
+
+        .btn-book {
+            background-color: #606C38;
+            color: #fff;
+        }
+
+        .btn-book:hover {
+            background-color: #495C2E;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            font-size: 24px; /* Increase font size for visibility */
+            color: #606C38; /* Match arrow color with header */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="back-arrow" onclick="window.location.href='8.html'">
+            ← <!-- Back arrow character -->
+        </div>
+
+        <div class="header">
+            جلسة فورية
+        </div>
+
+        <div class="session-box">
+            <img src="consultation.png" alt="استشارة نفسية">
+            <div>
+                <h3>استشارة نفسية مع معالج</h3>
+                <p>جلسة لمساعدتك على تحسين صحتك النفسية والتعامل مع مشاكلك النفسية والعاطفية وقد يستخدم أحد أساليب العلاج النفسي كالعلاج السلوكي المعرفي.</p>
+            </div>
+        </div>
+
+        <div class="session-box">
+            <img src="family-therapy.png" alt="استشارة أسرية">
+            <div>
+                <h3>استشارة أسرية مع معالج</h3>
+                <p>جلسة لمساعدتك على التعامل مع مشكلاتك الأسرية والاجتماعية وقد يستخدم تقنيات العلاج النفسي كالحوار.</p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-back" onclick="window.location.href='8.html'">رجوع</button>
+            <button class="btn btn-book">احجز الآن</button>
+        </div>
+        
+    </div>
+
+    <script>
+        document.querySelector('.btn-book').addEventListener('click', function() {
+            window.location.href = '10.html'; // Redirect to 10.index
+        });
+    </script>
+</body>
+</html>
